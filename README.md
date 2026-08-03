@@ -4,7 +4,18 @@
 This repository provides a unified telemetry pipeline designed to collect, process, and visualize **Metrics, Traces, and Logs** emitted by the [Authentication User Dashboard Application](https://github.com/Mel000000).
 
 ---
-## 📊 Live System Dashboard
+
+## Table of Contents
+- [Live System Dashboard](#live-system-dashboard)
+- [Architecture](#architecture)
+- [Services Included](#services-included)
+- [Getting Started](#getting-started)
+- [Ports & Endpoints](#ports--endpoints)
+- [Configuration Details](#configuration-details)
+- [License](#license)
+
+---
+## Live System Dashboard
 
 ![Grafana Observability Dashboard](./readmeAssets/Grafana_Dashboard.png)
 
@@ -14,17 +25,6 @@ This repository provides a unified telemetry pipeline designed to collect, proce
 > * **Correlated Telemetry:** Native OpenTelemetry ingestion allowing trace-to-log correlation across backend services.
 
 ---
-
-## Table of Contents
-- [Architecture](#architecture)
-- [Services Included](#services-included)
-- [Getting Started](#getting-started)
-- [Ports & Endpoints](#ports--endpoints)
-- [Configuration Details](#configuration-details)
-- [License](#license)
-
----
-
 ## Architecture
 
 ```mermaid
