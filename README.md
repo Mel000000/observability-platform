@@ -66,8 +66,8 @@ flowchart LR
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-collector-repo-url>
-   cd <your-collector-repo-folder>
+   git clone https://github.com/Mel000000/observability-platform.git
+   cd observability-platform
    ```
 2. **Start the stack:**
    ```bash
