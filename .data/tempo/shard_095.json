@@ -1,1 +1,1 @@
-{"jobs":{}}
+{"jobs":{"98f678db-c593-43b6-b62b-e2e5496f8a8f":{"id":"98f678db-c593-43b6-b62b-e2e5496f8a8f","type":1,"job_detail":{"tenant":"single-tenant","compaction":{"input":["01474854-9bb5-4635-8f71-1e7757465193","721dd175-abff-4115-824f-9dc142fb840e"],"output":["c70e6cb1-304c-42a8-8716-81eaf7b1dabf"]}},"status":1,"created_time":"2026-08-03T20:00:54.907273029Z","start_time":"2026-08-03T20:00:54.907283407Z","end_time":"2026-08-03T20:00:54.98437034Z","worker_id":"623f3f9e75c7","retries":0}}}

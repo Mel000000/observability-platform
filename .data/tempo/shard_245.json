@@ -1,1 +1,1 @@
-{"jobs":{}}
+{"jobs":{"02b436e4-b426-429c-b01c-a98d80c107a4":{"id":"02b436e4-b426-429c-b01c-a98d80c107a4","type":2,"job_detail":{"tenant":"single-tenant","retention":{}},"status":1,"created_time":"2026-08-03T19:50:38.606016985Z","start_time":"2026-08-03T19:50:38.606018838Z","end_time":"2026-08-03T19:50:38.703434419Z","worker_id":"623f3f9e75c7","retries":0}}}

@@ -1,41 +1,0 @@
-
-.
-string$request handler - /api/user/loggedIn
-
-stringPOST /api/user/logout
-
-stringset
-
-stringOPTIONS
-#
-stringmiddleware - cookieParser
-'
-stringmiddleware - urlencodedParser
-
-stringget
-,
-string"request handler - /api/user/logout
-
-stringexpire
-0
-string&request handler - /api/user/csrf-token
-
-stringdel
-'
-stringmiddleware - helmetMiddleware
-!
-stringmiddleware - jsonParser
-
-stringmiddleware - patched
-"
-stringmiddleware - <anonymous>
-
-stringmiddleware - session
- 
-stringGET /api/user/loggedIn
-"
-stringGET /api/user/csrf-token
-%
-stringmiddleware - corsMiddleware
-
-stringrouter - /csrf-token
