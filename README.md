@@ -4,6 +4,16 @@
 This repository provides a unified telemetry pipeline designed to collect, process, and visualize **Metrics, Traces, and Logs** emitted by the [Authentication User Dashboard Application](https://github.com/Mel000000).
 
 ---
+## 📊 Live System Dashboard
+
+![Grafana Observability Dashboard](./readmeAssets/Grafana_Dashboard.png)
+
+> **Key Performance & Security Highlights:**
+> * **RED Metrics & Traffic:** Real-time visibility into HTTP throughput by route and percentile request latency (p50, p95, p99).
+> * **Security Audit Telemetry:** Dedicated tracking of auth outcomes, including login successes (`200 OK`), invalid credentials (`401 Unauthorized`), CSRF violations (`403 Forbidden`), and rate-limiting blocks (`429 Too Many Requests`).
+> * **Correlated Telemetry:** Native OpenTelemetry ingestion allowing trace-to-log correlation across backend services.
+
+---
 
 ## Table of Contents
 - [Architecture](#architecture)
