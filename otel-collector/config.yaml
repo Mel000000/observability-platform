@@ -1,5 +1,5 @@
 receivers:
-  otlp:
+  otlp: # Receives OTLP data over gRPC and HTTP via the sdk in the auth application
     protocols:
       grpc:
         endpoint: 0.0.0.0:4317
@@ -7,30 +7,32 @@ receivers:
         endpoint: 0.0.0.0:4318
 
 processors:
-  memory_limiter:
+  memory_limiter: # Limits the number of metrics that can be stored in memory
     check_interval: 1s
     limit_mib: 256
-  batch: {}
+  batch: {} # Batches data for more efficient export
 
 exporters:
-  file:
-    path: /etc/otelcol-contrib/.data/otel-logs.json
-  debug:
+  debug: # Exports data for debugging purposes
     verbosity: detailed
-  prometheus:
+  prometheus: # Exports metrics in Prometheus format
     endpoint: 0.0.0.0:8889
+  otlphttp/loki: # Exports data to an OTLP HTTP endpoint (Loki exporter will use this to send logs to Grafana Cloud)
+    endpoint: http://loki:3100/otlp
+  otlphttp/tempo: # Exports data to an OTLP HTTP endpoint (Tempo exporter will use this to send traces to Grafana Cloud)
+    endpoint: http://tempo:4318
 
 service:
   pipelines:
     logs:
       receivers: [otlp]
       processors: [memory_limiter, batch]
-      exporters: [file]
+      exporters: [otlphttp/loki]
     traces:
       receivers: [otlp]
       processors: [memory_limiter, batch]
-      exporters: [debug]
+      exporters: [otlphttp/tempo]
     metrics:
       receivers: [otlp]
       processors: [memory_limiter, batch]
-      exporters: [prometheus]     # <- was debug, now scraped by Prometheus
+      exporters: [prometheus]     # all metrics will be available at http://localhost:8889/metrics and are currently the only ones that will be displayed in Grafana

@@ -1,31 +1,52 @@
 services:
   otel-collector:
-    image: otel/opentelemetry-collector-contrib
-    restart: unless-stopped
-    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    image: otel/opentelemetry-collector-contrib # Use the contrib image to get the Prometheus exporter
+    restart: unless-stopped 
+    command: ["--config=/etc/otelcol-contrib/config.yaml"] # Use the config file we provide to the container
     ports:
       - "4318:4318"   # OTLP HTTP
       - "4317:4317"   # OTLP gRPC
       - "8889:8889"   # Prometheus scrape endpoint
     volumes:
-      - ./otel-collector/config.yaml:/etc/otelcol-contrib/config.yaml
-      - ./.data:/etc/otelcol-contrib/.data
-    networks: [observability]
+      - ./otel-collector/config.yaml:/etc/otelcol-contrib/config.yaml # Mount the config file into the container
+      - ./.data:/etc/otelcol-contrib/.data # Mount a volume for the log file to be written to
+    networks: [observability] # Use a custom network so that the containers can communicate with each other
 
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:latest 
     restart: unless-stopped
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
-      - "9090:9090"
+      - "9090:9090" # Prometheus web UI
+    networks: [observability]
+  
+  loki:
+    image: grafana/loki:latest
+    restart: unless-stopped
+    ports:
+      - "3200:3100" # Loki web UI
+    command: -config.file=/etc/loki/local-config.yaml
+    networks: [observability]
+  
+  tempo:
+    image: grafana/tempo:latest
+    restart: unless-stopped
+    ports:
+      - "3300:3200"   # Tempo web UI / query API
+      - "4319:4317"   # OTLP gRPC receiver (avoid clashing with the collector's 4317)
+      - "4320:4318"   # OTLP HTTP receiver
+    volumes:
+      - ./tempo/tempo.yaml:/etc/tempo/tempo.yaml
+      - ./.data/tempo:/var/tempo
+    command: -config.file=/etc/tempo/tempo.yaml
     networks: [observability]
 
   grafana:
     image: grafana/grafana:latest
     restart: unless-stopped
     ports:
-      - "3001:3000"   # 3000 is taken by your app
+      - "3001:3000"   # Grafana web UI
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
     networks: [observability]

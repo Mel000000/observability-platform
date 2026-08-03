@@ -1,0 +1,34 @@
+
+
+stringmiddleware - session
+ 
+stringGET /api/user/loggedIn
+
+stringget
+'
+stringmiddleware - helmetMiddleware
+%
+stringmiddleware - corsMiddleware
+!
+stringmiddleware - jsonParser
+
+stringmiddleware - patched
+
+string
+find users
+
+stringfindOne users
+#
+stringmiddleware - cookieParser
+'
+stringmiddleware - urlencodedParser
+
+stringrouter - /csrf-token
+.
+string$request handler - /api/user/loggedIn
+1
+string'request handler - /api/user/auth/status
+#
+stringGET /api/user/auth/status
+
+stringexpire
