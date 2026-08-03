@@ -1,0 +1,51 @@
+
+"
+stringmiddleware - <anonymous>
+'
+stringmiddleware - helmetMiddleware
+%
+stringmiddleware - corsMiddleware
+!
+stringmiddleware - jsonParser
+
+stringmiddleware - patched
+.
+string$request handler - /api/user/loggedIn
+
+string
+find users
+/
+string%request handler - /api/user/loginUser
+
+stringPOST
+
+stringmiddleware - session
+'
+stringmiddleware - urlencodedParser
+0
+string&request handler - /api/user/csrf-token
+"
+stringGET /api/user/csrf-token
+
+stringfindOne users
+"
+stringPOST /api/user/loginUser
+
+stringtcp.connect
+
+stringtls.connect
+
+stringrouter - /csrf-token
+
+stringOPTIONS
+#
+stringmiddleware - cookieParser
+
+stringget
+
+stringexpire
+ 
+stringGET /api/user/loggedIn
+
+string
+dns.lookup

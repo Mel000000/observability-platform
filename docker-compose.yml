@@ -21,7 +21,7 @@ services:
       - "9090:9090" # Prometheus web UI
     networks: [observability]
   
-  loki:
+  loki: # works but the application isnt sending logs to it, so the logs are empty; if wanted down the road i need to put the app inside a docker container and send the logs to the collector, which will then send them to loki
     image: grafana/loki:latest
     restart: unless-stopped
     ports:
