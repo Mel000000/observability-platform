@@ -49,7 +49,11 @@ services:
       - "3001:3000"   # Grafana web UI
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
+      - grafana-storage:/var/lib/grafana 
     networks: [observability]
+  
+volumes:
+  grafana-storage:
 
 networks:
   observability:

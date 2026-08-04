@@ -1,1 +1,1 @@
-{"jobs":{"37eacae3-8f34-46c3-a487-191ab3f336c4":{"id":"37eacae3-8f34-46c3-a487-191ab3f336c4","type":1,"job_detail":{"tenant":"single-tenant","compaction":{"input":["7ee9cebc-7cae-4238-b5eb-1b6cd02415fa","8a9092bb-d380-408b-9ffa-27d2e5275ffa"],"output":["be03efef-b5f8-4b80-b9f3-5cc93b0ee377"]}},"status":1,"created_time":"2026-08-03T19:40:55.044119874Z","start_time":"2026-08-03T19:40:55.04413147Z","end_time":"2026-08-03T19:40:55.114095511Z","worker_id":"623f3f9e75c7","retries":0}}}
+{"jobs":{}}
