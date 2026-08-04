@@ -1,11 +1,12 @@
 # Observability Stack & OpenTelemetry Collector
 ⭐ A local observability backend suite powered by Docker Compose, OpenTelemetry Collector, Prometheus, Grafana Tempo, Grafana Loki, and Grafana.
 
-This repository provides a unified telemetry pipeline designed to collect, process, and visualize **Metrics, Traces, and Logs** emitted by the [Authentication User Dashboard Application](https://github.com/Mel000000).
+This repository provides a unified telemetry pipeline designed to collect, process, and visualize **Metrics, Traces, and Logs** emitted by the [Authentication User Dashboard Application](https://github.com/Mel000000/Authentication-User-Dashboard-App).
 
 ---
 
 ## Table of Contents
+- [Live System Dashboard](#live-system-dashboard)
 - [Architecture](#architecture)
 - [Services Included](#services-included)
 - [Getting Started](#getting-started)
@@ -14,7 +15,16 @@ This repository provides a unified telemetry pipeline designed to collect, proce
 - [License](#license)
 
 ---
+## Live System Dashboard
 
+![Grafana Observability Dashboard](./readmeAssets/Grafana_Dashboard.png)
+
+> **Key Performance & Security Highlights:**
+> * **RED Metrics & Traffic:** Real-time visibility into HTTP throughput by route and percentile request latency (p50, p95, p99).
+> * **Security Audit Telemetry:** Dedicated tracking of auth outcomes, including login successes (`200 OK`), invalid credentials (`401 Unauthorized`), CSRF violations (`403 Forbidden`), and rate-limiting blocks (`429 Too Many Requests`).
+> * **Correlated Telemetry:** Native OpenTelemetry ingestion allowing trace-to-log correlation across backend services.
+
+---
 ## Architecture
 
 ```mermaid
