@@ -1,7 +1,7 @@
 # Observability Stack & OpenTelemetry Collector
 ⭐ A local observability backend suite powered by Docker Compose, OpenTelemetry Collector, Prometheus, Grafana Tempo, Grafana Loki, and Grafana.
 
-This repository provides a unified telemetry pipeline designed to collect, process, and visualize **Metrics, Traces, and Logs** emitted by the [Authentication User Dashboard Application]([https://github.com/Mel000000/Authentication-User-Dashboard-App]).
+This repository provides a unified telemetry pipeline designed to collect, process, and visualize **Metrics, Traces, and Logs** emitted by the [Authentication User Dashboard Application](https://github.com/Mel000000/Authentication-User-Dashboard-App).
 
 ---
 
