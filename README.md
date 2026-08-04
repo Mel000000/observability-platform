@@ -17,7 +17,7 @@ This repository provides a unified telemetry pipeline designed to collect, proce
 ---
 ## Live System Dashboard
 
-![Grafana Observability Dashboard](./readmeAssets/Grafana_Dashboard.png)
+![Grafana Observability Dashboard](./readmeAssets/image.png)
 
 > **Key Performance & Security Highlights:**
 > * **RED Metrics & Traffic:** Real-time visibility into HTTP throughput by route and percentile request latency (p50, p95, p99).
