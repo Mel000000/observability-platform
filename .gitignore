@@ -3,7 +3,7 @@
 .env.*
 
 # Local data and runtime artifacts
-*.data
+*.data/
 *.db
 *.wal
 *.log

@@ -50,10 +50,12 @@ services:
     volumes:
       - ./grafana/provisioning:/etc/grafana/provisioning
       - grafana-storage:/var/lib/grafana 
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
     networks: [observability]
   
 volumes:
   grafana-storage:
+    external: true
 
 networks:
   observability:
